@@ -22,6 +22,7 @@ $LANG = array(
 'L_COMMAS'						=> '* separate emails by commas',
 'L_AUTHOR_EMAIL'				=> 'Send an email to the author of the article',
 'L_SAVE'						=> 'Save',
+'L_ENABLE_COMMENTOR_NOTIFICATION' => 'Send an email to article\'s commentators',
 
 );
 ?>

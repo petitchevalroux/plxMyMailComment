@@ -8,7 +8,8 @@ if (!empty($_POST)) {
 	$plxPlugin->setParam('to', $_POST['to'], 'string');
 	$plxPlugin->setParam('cc', $_POST['cc'], 'string');
 	$plxPlugin->setParam('bcc', $_POST['bcc'], 'string');
-	$plxPlugin->setParam('author_email', $_POST['author_email'], 'string');	
+	$plxPlugin->setParam('author_email', $_POST['author_email'], 'string');
+	$plxPlugin->setParam('enable_commentator_notification', $_POST['enable_commentator_notification'], 'numeric');
 	$plxPlugin->saveParams();
 	header('Location: parametres_plugin.php?p=plxMyMailComment');
 	exit;
@@ -18,6 +19,7 @@ $to = $plxPlugin->getParam('to') == '' ? '' : $plxPlugin->getParam('to');
 $cc = $plxPlugin->getParam('cc') == '' ? '' : $plxPlugin->getParam('cc');
 $bcc = $plxPlugin->getParam('bcc') == '' ? '' : $plxPlugin->getParam('bcc');
 $author_email = $plxPlugin->getParam('author_email') == '' ? 0 : $plxPlugin->getParam('author_email');
+$enable_commentator_notification = $plxPlugin->getParam('enable_commentator_notification') != 1 ? 0 : 1;
 ?>
 
 <h2><?php echo $plxPlugin->getInfo('title') ?></h2>
@@ -41,6 +43,8 @@ if (function_exists('mail')) {
 			<?php plxUtils::printInput('bcc', $bcc, 'text', '60-255') ?>
 		<p class="field"><label for="id_author_email"><?php echo $plxPlugin->lang('L_AUTHOR_EMAIL') ?></label></p>
 		<?php plxUtils::printSelect('author_email',array('1'=>L_YES,'0'=>L_NO), $author_email);?>
+		<p class="field"><label for="id_enable_commentator_notification"><?php echo $plxPlugin->lang('L_ENABLE_COMMENTOR_NOTIFICATION') ?></label></p>
+		<?php plxUtils::printSelect('enable_commentator_notification',array('1'=>L_YES,'0'=>L_NO), $enable_commentator_notification);?>
 		<br /><br />
 		<?php $plxPlugin->lang('L_COMMAS') ?>
 		<p>

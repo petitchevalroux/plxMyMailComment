@@ -22,6 +22,6 @@ $LANG = array(
 'L_COMMAS'						=> '* séparer les adresses emails par des virgules',
 'L_AUTHOR_EMAIL'				=> 'Envoyer un email à l\'auteur de l\'article',
 'L_SAVE'						=> 'Enregistrer',
-
+'L_ENABLE_COMMENTOR_NOTIFICATION' => 'Envoyer un email aux commentateurs de l\'article',
 );
 ?>
